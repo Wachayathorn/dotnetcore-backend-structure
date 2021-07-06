@@ -1,26 +1,15 @@
-FROM mcr.microsoft.com/dotnet/aspnet:5.0-focal AS base
+FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
 WORKDIR /app
-EXPOSE 5001
+EXPOSE 80
 
-ENV ASPNETCORE_URLS=http://+:5001
-
-# Creates a non-root user with an explicit UID and adds permission to access the /app folder
-# For more info, please refer to https://aka.ms/vscode-docker-dotnet-configure-containers
-RUN adduser -u 5678 --disabled-password --gecos "" appuser && chown -R appuser /app
-USER appuser
-
-FROM mcr.microsoft.com/dotnet/sdk:5.0-focal AS build
+FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
-COPY ["dotnetcore-backend-structure.csproj", "./"]
-RUN dotnet restore "dotnetcore-backend-structure.csproj"
+COPY ["dotnet-5.csproj", "./"]
+RUN dotnet restore "dotnet-5.csproj"
 COPY . .
-WORKDIR "/src/."
-RUN dotnet build "dotnetcore-backend-structure.csproj" -c Release -o /app/build
-
-FROM build AS publish
-RUN dotnet publish "dotnetcore-backend-structure.csproj" -c Release -o /app/publish
+RUN dotnet publish "dotnet-5.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
-COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "dotnetcore-backend-structure.dll"]
+COPY --from=build /app/publish .
+ENTRYPOINT ["dotnet", "dotnet-5.dll"]

@@ -1,0 +1,26 @@
+﻿<Properties StartupConfiguration="{A704B92C-6A5A-4609-A623-551AF9999CD8}|Default">
+  <MonoDevelop.Ide.ItemProperties.dotnetcore-backend-structure PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="dotnetcore-backend-structure" expanded="True">
+            <Node name="dotnetcore-backend-structure" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="example" expanded="True">
+                  <Node name="ExampleController.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

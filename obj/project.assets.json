@@ -205,7 +205,7 @@
       "outputPath": "/Users/wachayathorn/Desktop/Github/dotnetcore-backend-structure/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/wachayathorn/.nuget/NuGet/NuGet.Config"
+        "/Users/wachayathorn/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
